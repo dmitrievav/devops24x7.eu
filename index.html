@@ -159,16 +159,20 @@
             background: #f8f9fa;
             padding: 2rem;
             border-radius: 10px;
-            text-align: center;
+            text-align: left;
             transition: transform 0.3s;
         }
 
         .content-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-0px);
         }
 
         .content-card h3 {
             color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .content-card p {
             margin-bottom: 1rem;
         }
 
@@ -249,7 +253,7 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Aleksey Dmitriev</div>
+            <div class="logo">DevOps24x7</div>
             <ul class="nav-links">
                 <li><a href="#home" onclick="showSection('home')">Home</a></li>
                 <li><a href="#about" onclick="showSection('about')">About</a></li>
@@ -264,7 +268,7 @@
             <div class="hero">
                 <div class="container">
                     <h1>Aleksey Dmitriev</h1>
-                    <p>Professional Freelancer & Software Developer</p>
+                    <p>Professional Freelancer & Software Developer & SRE & DevOps</p>
                     <a href="#contact" class="cta-button" onclick="showSection('contact')">Get In Touch</a>
                 </div>
             </div>
@@ -274,10 +278,14 @@
             <div class="container">
                 <div class="content-section">
                     <h2>About Me</h2>
-                    <p><b>Hi, I’m Alex (Aleksey Dmitriev)</b> — a freelance DevOps Engineer and Software Developer dedicated to helping businesses build robust, scalable, and modern technology solutions.</p>
-                    <p></p>With over <b>20 years of experience</b> in IT infrastructure, Linux, networking, and software engineering, I help my clients turn complex technical challenges into smooth, automated systems that just work. From <b>cloud architecture</b> and <b>Kubernetes orchestration</b> to <b>custom automation</b> and <b>smart deployments</b>, I make sure your technology helps you move faster—not get in the way.</p>
-                    <p>I stay on top of the latest technologies so you don’t have to. Whether you're a startup looking to scale or an established company needing to modernize, I bring deep technical know-how combined with a problem-solving mindset to deliver solutions that drive real results.</p>
-                    <p>I’m easy to work with, reliable, and committed to clear communication and long-term success. Let’s work together to turn your tech ideas into reality—with minimal stress and maximum impact</p>
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <p><b style="color: #764ba2;">Hi, I’m Alex (Aleksey Dmitriev)</b> — a freelance DevOps Engineer and Software Developer dedicated to helping businesses build robust, scalable, and modern technology solutions.</p>
+                            <p>With over <b style="color: #764ba2;">20 years of experience</b> in IT infrastructure, Linux, networking, and software engineering, I help my clients turn complex technical challenges into smooth, automated systems that just work. From <b style="color: #764ba2;">cloud architecture</b> and <b style="color: #764ba2;">Kubernetes orchestration</b> to <b style="color: #764ba2;">custom automation</b> and <b style="color: #764ba2;">smart deployments</b>, I make sure your technology helps you move faster—not get in the way.</p>
+                            <p>I stay on top of the latest technologies so you don’t have to. Whether you're a startup looking to scale or an established company needing to modernize, I bring deep technical know-how combined with a problem-solving mindset to deliver solutions that drive real results.</p>
+                            <p>I’m easy to work with, reliable, and committed to clear communication and long-term success. Let’s work together to turn your tech ideas into reality—with minimal stress and maximum impact</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
