@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Alarm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #current-time {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        #alarm-status {
+            font-size: 1.5em;
+            margin: 20px 0;
+            min-height: 40px;
+        }
+        #stop-button {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        #stop-button:hover {
+            background-color: #cc0000;
+        }
+        .alarm-active {
+            color: #ff4444;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Periodic Alarm</h1>
+        <div id="current-time">--:--:--</div>
+        <div id="alarm-status"></div>
+        <button id="stop-button">STOP ALARM</button>
+        <p>Alarms will sound at 00:00, 04:00, 08:00, 12:00, 16:00, and 20:00 for 5 minutes</p>
+    </div>
+
+    <audio id="alarm-sound" loop>
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const alarmTimes = [0, 4, 8, 12, 16, 20]; // Hours when alarm should trigger
+        const alarmDuration = 5 * 60 * 1000; // 5 minutes in milliseconds
+        let alarmTimeout;
+        let alarmEndTime = 0;
+        
+        const timeDisplay = document.getElementById('current-time');
+        const alarmStatus = document.getElementById('alarm-status');
+        const stopButton = document.getElementById('stop-button');
+        const alarmSound = document.getElementById('alarm-sound');
+        
+        // Check time every second
+        setInterval(updateTime, 1000);
+        
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            // Display current time
+            timeDisplay.textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            // Check if it's time to trigger alarm
+            if (minutes === 0 && seconds === 0 && alarmTimes.includes(hours) {
+                startAlarm();
+            }
+            
+            // Check if alarm should still be playing
+            if (alarmEndTime > 0 && now.getTime() >= alarmEndTime) {
+                stopAlarm();
+            }
+        }
+        
+        function startAlarm() {
+            const now = new Date();
+            alarmEndTime = now.getTime() + alarmDuration;
+            
+            alarmSound.play();
+            alarmStatus.textContent = "ALARM ACTIVE!";
+            alarmStatus.classList.add('alarm-active');
+            stopButton.style.display = 'inline-block';
+            
+            // Set timeout to stop alarm after duration
+            clearTimeout(alarmTimeout);
+            alarmTimeout = setTimeout(stopAlarm, alarmDuration);
+        }
+        
+        function stopAlarm() {
+            alarmSound.pause();
+            alarmSound.currentTime = 0;
+            alarmStatus.textContent = "Alarm inactive";
+            alarmStatus.classList.remove('alarm-active');
+            stopButton.style.display = 'none';
+            alarmEndTime = 0;
+        }
+        
+        stopButton.addEventListener('click', stopAlarm);
+        
+        // Initialize
+        updateTime();
+    </script>
+</body>
+</html>
