@@ -102,6 +102,20 @@ svg {
     border-bottom: 1px solid var(--line);
 }
 
+@media (min-width: 961px) {
+    html {
+        /* keep anchor targets and focused elements clear of the sticky header */
+        scroll-padding-top: 104px;
+    }
+
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--canvas);
+    }
+}
+
 .brand {
     display: flex;
     gap: 12px;
