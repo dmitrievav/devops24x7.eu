@@ -305,6 +305,13 @@ svg {
     scroll-margin-top: 16px;
 }
 
+@media (min-width: 961px) {
+    .section {
+        /* the section border hides under the sticky header after a jump */
+        scroll-margin-top: 0;
+    }
+}
+
 .section-heading {
     display: flex;
     align-items: baseline;
