@@ -32,6 +32,9 @@
             "AWS",
             "GCP",
             "CI/CD",
+            "Karpenter",
+            "Argo CD",
+            "GitLab CI",
             "Python",
             "Go"
         ],
@@ -137,6 +140,7 @@
                 <ul class="nav-links">
                     <li><a href="#services">Leistungen</a></li>
                     <li><a href="#how-i-work">Arbeitsweise</a></li>
+                    <li><a href="#work">Arbeitsbeispiele</a></li>
                     <li><a href="#about">Über mich</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
@@ -183,6 +187,7 @@
                     <div class="card">
                         <h3>Technische Beratung &amp; Architektur-Review</h3>
                         <p>Ich analysiere bestehende Architektur und Infrastruktur-Code, zeige Risiken und Engpässe auf und erstelle einen Modernisierungsplan. Während Ihr Team den Plan umsetzt, berate ich es.</p>
+                        <p>Einführung einer Technologie in Ihrem Team: Workshop, How-to-Dokumentation und Pilot in Ihrer Umgebung (Kubernetes, Istio, Argo CD, Terraform).</p>
                     </div>
                 </div>
             </section>
@@ -205,6 +210,61 @@
                         <li>Vertrag nach deutschem Recht.</li>
                         <li>Keine deutsche Umsatzsteuer für Geschäftskunden außerhalb Deutschlands (innerhalb der EU: Reverse-Charge-Verfahren).</li>
                     </ul>
+                </div>
+            </section>
+
+            <section id="work" class="section">
+                <div class="section-heading"><h2>Arbeitsbeispiele</h2><p>Ausgewählte Arbeiten aus den Jahren 2019 bis 2026, anonymisiert: keine Kundennamen, keine Branchen, keine absoluten Zahlen des Kunden.</p></div>
+                <div class="cases">
+                    <article class="case" id="work-1">
+                        <p class="case-label">Arbeitsbeispiel 1</p>
+                        <h3>Kubernetes auf AWS: halb so viele Nodes, Neustarts nur im vereinbarten Zeitfenster</h3>
+                        <div class="case-grid">
+                            <div><h4>Ausgangslage</h4><p>Mehrere EKS-Cluster in mehreren AWS-Konten waren organisch gewachsen: feste Node-Gruppen für die Spitzenlast, überall On-Demand-Instanzen, Batch-Jobs und langlaufende Dienste auf denselben Nodes. Ein Cluster forderte rund 60 % seiner CPU an und nutzte rund 10 %. Jede automatische Konsolidierung der Nodes startete Dienste zu beliebigen Zeiten neu.</p></div>
+                            <div><h4>Vorgehen</h4><p>Umstellung der Cluster auf Karpenter mit Konsolidierung unterausgelasteter Nodes, eigene Node-Pools für Batch-Jobs mit Schutz vor Verdrängung per Policy, Spot-Pools, denen Dienstverantwortliche per Toleration beitreten. Der erste Konsolidierungslauf erzeugte eine Schleife aus Node-Neuerstellungen; nach der Ursachenanalyse wurden Konsolidierung und Node-Rotation auf ein vereinbartes Zeitfenster pro Tag begrenzt, mit Alarmregeln auf das Node-Alter. Jede Änderung über Terraform/Terragrunt und geprüfte Merge Requests, Cluster für Cluster ausgerollt und nach jedem Schritt verifiziert.</p></div>
+                            <div class="result"><h4>Ergebnis</h4><p>Mehr als die Hälfte weniger Nodes, Node-Kosten entsprechend gesenkt. Dienste starten nur noch im Zeitfenster neu; Vorfälle durch Konsolidierung sind verschwunden.</p></div>
+                        </div>
+                    </article>
+                    <article class="case" id="work-2">
+                        <p class="case-label">Arbeitsbeispiel 2</p>
+                        <h3>CI auf selbst gehostetem GitLab: von handkonfigurierten Bare-Metal-Runnern zu autoskalierenden Flotten</h3>
+                        <div class="case-grid">
+                            <div><h4>Ausgangslage</h4><p>Native Builds liefen auf einer Handvoll von Hand konfigurierter Bare-Metal-Runner. Derselbe Build dauerte je nach Auslastung der Hosts 7 Minuten bis über eine Stunde, die ARM-Warteschlange hungerte, Platten füllten sich mit alten Images, der Artefaktspeicher lief zweimal über und ließ Jobs scheitern. Rund 40 % der Hintergrundjobs des GitLab-Servers gingen an tote Webhooks.</p></div>
+                            <div><h4>Vorgehen</h4><p>Entwurf autoskalierender Runner-Flotten auf AWS (x86 und ARM, Spot), als Code beschrieben und per GitOps ausgerollt. Eine Testwoche mit echten Jobs, dann Migration des schwersten Projekts, danach Abschaltung der statischen Runner und Neuinstallation ihrer Hosts für einen Rechencluster. Tote Webhooks entfernt, Aufbewahrungsfristen für die CI-Historie und Limits für den Build-Cache eingeführt, eine Upgrade-Prozedur für den Server mit Prüfung der Hintergrundmigrationen geschrieben und an das Team übergeben.</p></div>
+                            <div class="result"><h4>Ergebnis</h4><p>Keine statischen Runner mehr. 58 % weniger gespeicherte Pipelines, Latenz der Hintergrundjobs von Minuten auf Sekunden. Ein geplantes Server-Upgrade passt in ein Zeitfenster von rund einer halben Stunde.</p></div>
+                        </div>
+                    </article>
+                    <article class="case" id="work-3">
+                        <p class="case-label">Arbeitsbeispiel 3</p>
+                        <h3>Bare-Metal-Cluster für datenintensive Berechnungen, verwaltet als Code</h3>
+                        <div class="case-grid">
+                            <div><h4>Ausgangslage</h4><p>Ein Datenteam brauchte Rechenleistung mit schnellen lokalen Platten und großen Datenmengen, die in der Cloud unverhältnismäßig teuer war. Gefordert war ein Cluster auf gemieteten Servern mit der Disziplin der Cloud: reproduzierbare Installation, verschlüsselte Daten, gemeinsamer Speicherzugriff ohne Schlüssel auf den Hosts.</p></div>
+                            <div><h4>Vorgehen</h4><p>Start mit einem Pilot aus drei Nodes, Ausbau auf mehr als fünfzehn: Installation und Bootstrap mit Ansible, RAID0 für Arbeitsdaten, LUKS auf der Datenpartition, ein gemeinsamer Objektspeicher-Bucket, auf allen Nodes schreibgeschützt eingebunden über eine Netzwerkrichtlinie statt über Schlüssel auf den Hosts. Prozedur für Aufnahme, Entfernung und Neuinstallation von Nodes sowie eine Anleitung für die Nutzer des Clusters geschrieben.</p></div>
+                            <div class="result"><h4>Ergebnis</h4><p>Eine Charge von zehn Nodes war innerhalb weniger Tage nach der Prozedur einsatzbereit, nicht nach dem Gedächtnis einer einzelnen Person. Direktes Lesen aus dem Bucket ist rund siebenmal schneller als der bisherige Weg.</p></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="cases cases-short">
+                    <article class="case case-short" id="work-4">
+                        <p class="case-label">Arbeitsbeispiel 4</p>
+                        <h3>Mehr als zehn EKS-Cluster um drei Hauptversionen angehoben</h3>
+                        <p>Die Cluster lagen mehrere Kubernetes-Versionen zurück und zahlten den Aufschlag für veraltete Versionen. Alle Cluster durch die Versionskette zusammen mit dem CNI angehoben, auf einem Testcluster geprobt, Zeitfenster vor der Spitzenlast gelegt und die Prozedur als Playbook für das Team dokumentiert. Aufschlag entfallen; keine Vorfälle auf den Hauptclustern.</p>
+                    </article>
+                    <article class="case case-short" id="work-5">
+                        <p class="case-label">Arbeitsbeispiel 5</p>
+                        <h3>AWS-Plattform: von Bastion-Hosts und statischen Schlüsseln zu OIDC und Managed Services</h3>
+                        <p>Ein Unternehmen mit mehreren Webprodukten auf ECS und ohne Infrastrukturdokumentation. EKS-Umgebung von Grund auf als Code entworfen (Argo CD, IRSA, CSI-Treiber für Secrets und EFS, Logs in OpenSearch, ExternalDNS), Bastion durch ECS Exec ersetzt, Datenbank auf Aurora Serverless migriert, Repositories auf GitHub Actions mit OIDC statt statischer Schlüssel umgestellt, mehrere Site-to-Site-VPNs mit BGP aufgebaut und den Message-Broker ohne Vorfälle vom externen Hosting nach AWS verlegt.</p>
+                    </article>
+                    <article class="case case-short" id="work-6">
+                        <p class="case-label">Arbeitsbeispiel 6</p>
+                        <h3>Ein Deploy-Flow für acht Repositories</h3>
+                        <p>Die Deploy-Pipelines von acht Diensten öffneten Merge Requests im GitOps-Repository auf unterschiedliche Weise und blieben bei parallelen Deploys hängen. Umstellung auf eine gemeinsame CI-Komponente mit Rebase-and-Retry, Prüfung mit vier gleichzeitigen Deploys, mehr als hundert hängende Merge Requests geschlossen. Deploys kommen ohne manuelles Eingreifen aus.</p>
+                    </article>
+                    <article class="case case-short" id="work-7">
+                        <p class="case-label">Arbeitsbeispiel 7</p>
+                        <h3>Cloud-Plattform-Team für ein B2B-Produkt</h3>
+                        <p>Leitung eines Teams von sieben Ingenieuren beim Aufbau der Kubernetes-Plattform. Migration der Produktionscluster von Docker auf containerd, Spot-Flotte für Entwicklungsumgebungen zu rund einem Drittel des On-Demand-Preises pro Node, dedizierte Node-Gruppen für kritische Anwendungen, teamübergreifende Regeln für Requests/Limits und Kapazität, automatische Zertifikatserneuerung mit cert-manager, der erste Kubernetes-Operator des Unternehmens in Go, Managed Kafka mit eigenen Dashboards, GitOps mit Argo CD und Infrastructure as Code mit Terraform.</p>
+                    </article>
                 </div>
             </section>
 

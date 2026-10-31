@@ -423,11 +423,40 @@ svg {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 34px;
-    max-width: 900px;
 }
 
-.case + .case {
+.cases {
+    display: grid;
+    gap: 24px;
+}
+
+.cases + .cases {
     margin-top: 24px;
+}
+
+.cases-short {
+    grid-template-columns: 1fr 1fr;
+}
+
+.case-short {
+    padding: 28px;
+}
+
+.case-short h3 {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -.015em;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.case-short > p:last-child {
+    font-size: 15px;
+    color: var(--muted);
+}
+
+.card p + p {
+    margin-top: 12px;
 }
 
 .case-label {
@@ -552,6 +581,10 @@ svg {
         grid-template-columns: 1fr;
         gap: 25px;
     }
+
+    .cases-short {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 560px) {
@@ -639,6 +672,14 @@ svg {
 
     .case h3 {
         font-size: 24px;
+    }
+
+    .case-short {
+        padding: 22px;
+    }
+
+    .case-short h3 {
+        font-size: 18px;
     }
 
     .terms {

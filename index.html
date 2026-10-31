@@ -32,6 +32,9 @@
             "AWS",
             "GCP",
             "CI/CD",
+            "Karpenter",
+            "Argo CD",
+            "GitLab CI",
             "Python",
             "Go"
         ],
@@ -137,6 +140,7 @@
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
                     <li><a href="#how-i-work">How I work</a></li>
+                    <li><a href="#work">Work examples</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -183,6 +187,7 @@
                     <div class="card">
                         <h3>Technical Consulting &amp; Architecture Review</h3>
                         <p>I analyse existing architecture and infrastructure code, identify risks and bottlenecks, and draw up a modernisation plan. While your team implements the plan, I advise it as a consultant.</p>
+                        <p>Introducing a technology to your team: a workshop, how-to documentation and a pilot on your environment (Kubernetes, Istio, Argo CD, Terraform).</p>
                     </div>
                 </div>
             </section>
@@ -205,6 +210,61 @@
                         <li>Contract under German law.</li>
                         <li>No German VAT for business clients outside Germany (within the EU: reverse charge).</li>
                     </ul>
+                </div>
+            </section>
+
+            <section id="work" class="section">
+                <div class="section-heading"><h2>Work examples</h2><p>Selected engineering work from 2019 to 2026, anonymised: no client names, no industries, no absolute figures of the client.</p></div>
+                <div class="cases">
+                    <article class="case" id="work-1">
+                        <p class="case-label">Work example 1</p>
+                        <h3>Kubernetes on AWS: half the nodes, restarts only in an agreed window</h3>
+                        <div class="case-grid">
+                            <div><h4>Challenge</h4><p>Several EKS clusters across AWS accounts had grown organically: fixed node groups sized for peak load, on-demand instances everywhere, batch jobs and long-running services on the same nodes. One cluster requested about 60 % of its CPU while using about 10 %. Any automatic node consolidation restarted services at random times.</p></div>
+                            <div><h4>Approach</h4><p>Moved the clusters to Karpenter with consolidation of under-used nodes, separated batch jobs into their own node pools protected from eviction by policy, and added spot pools that service owners opt into with a toleration. The first consolidation run produced a node re-creation loop; after root-cause analysis, consolidation and node rotation were limited to one agreed window per day, with alerting rules on node age. Every change went through Terraform/Terragrunt and reviewed merge requests, rolled out cluster by cluster with verification after each.</p></div>
+                            <div class="result"><h4>Result</h4><p>Node count down by more than half, node cost reduced accordingly. Services restart only inside the window; consolidation-related incidents stopped.</p></div>
+                        </div>
+                    </article>
+                    <article class="case" id="work-2">
+                        <p class="case-label">Work example 2</p>
+                        <h3>CI on self-hosted GitLab: from hand-configured bare-metal runners to autoscaling fleets</h3>
+                        <div class="case-grid">
+                            <div><h4>Challenge</h4><p>Native builds ran on a handful of bare-metal runners configured by hand. The same build took anywhere from 7 minutes to over an hour depending on host load, the ARM queue starved, disks filled up with old images, artifact storage overflowed twice and failed jobs. About 40 % of the GitLab server's background jobs were spent on dead webhooks.</p></div>
+                            <div><h4>Approach</h4><p>Designed autoscaling runner fleets on AWS (x86 and ARM, spot), defined as code and deployed through GitOps. Ran a test week on real jobs, migrated the heaviest project first, then retired the static runners and reinstalled their hosts for a compute cluster. Removed the dead webhooks, introduced CI history retention and build-cache limits, and wrote a server upgrade procedure with background-migration checks, handed over to the team.</p></div>
+                            <div class="result"><h4>Result</h4><p>No static runners left. Stored pipelines down 58 %, background job latency down from minutes to seconds. A planned server upgrade fits into a window of about half an hour.</p></div>
+                        </div>
+                    </article>
+                    <article class="case" id="work-3">
+                        <p class="case-label">Work example 3</p>
+                        <h3>Bare-metal cluster for data-heavy compute, managed as code</h3>
+                        <div class="case-grid">
+                            <div><h4>Challenge</h4><p>A data team needed compute with fast local disks and large data volumes that was disproportionately expensive in the cloud. The requirement: a cluster on rented servers with cloud discipline, meaning reproducible installation, encrypted data and shared storage access without keys on the hosts.</p></div>
+                            <div><h4>Approach</h4><p>Started with a three-node pilot and grew the cluster to more than fifteen nodes: installation and bootstrap with Ansible, RAID0 for working data, LUKS on the data partition, a shared object-storage bucket mounted read-only on all nodes through a network policy instead of host keys. Wrote the procedure for adding, removing and reinstalling nodes and a user guide for the cluster.</p></div>
+                            <div class="result"><h4>Result</h4><p>A batch of ten nodes went live within days by following the procedure rather than one person's memory. Direct reads from the bucket are about seven times faster than the previous path.</p></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="cases cases-short">
+                    <article class="case case-short" id="work-4">
+                        <p class="case-label">Work example 4</p>
+                        <h3>More than ten EKS clusters upgraded three major versions ahead</h3>
+                        <p>The clusters lagged several Kubernetes versions behind and paid the surcharge for outdated versions. Upgraded all of them through the version chain together with the CNI, rehearsed on a test cluster, scheduled windows before peak load and documented the procedure as a playbook for the team. Surcharge gone; no incidents on the main clusters.</p>
+                    </article>
+                    <article class="case case-short" id="work-5">
+                        <p class="case-label">Work example 5</p>
+                        <h3>AWS platform: from bastion hosts and static keys to OIDC and managed services</h3>
+                        <p>A company with several web products on ECS and no infrastructure documentation. Designed an EKS environment from scratch as code (Argo CD, IRSA, CSI drivers for secrets and EFS, logs in OpenSearch, ExternalDNS), replaced the bastion with ECS Exec, migrated the database to Aurora Serverless, moved the repositories to GitHub Actions with OIDC instead of static keys, set up several site-to-site VPNs with BGP and moved the message broker from external hosting into AWS without incidents.</p>
+                    </article>
+                    <article class="case case-short" id="work-6">
+                        <p class="case-label">Work example 6</p>
+                        <h3>One deploy flow for eight repositories</h3>
+                        <p>The deploy pipelines of eight services opened merge requests into the GitOps repository in different ways and got stuck on parallel deploys. Moved them to a shared CI component with rebase-and-retry, verified it with four simultaneous deploys and closed more than a hundred stuck merge requests. Deploys no longer need manual intervention.</p>
+                    </article>
+                    <article class="case case-short" id="work-7">
+                        <p class="case-label">Work example 7</p>
+                        <h3>Cloud platform team for a B2B product</h3>
+                        <p>Led a team of seven engineers building the Kubernetes platform. Migrated production clusters from Docker to containerd, introduced a spot fleet for development environments at roughly a third of the on-demand node price, dedicated node groups for critical applications, requests/limits and capacity governance across teams, automated certificate renewal with cert-manager, the company's first Kubernetes operator in Go, managed Kafka with custom dashboards, GitOps with Argo CD and infrastructure as code with Terraform.</p>
+                    </article>
                 </div>
             </section>
 
