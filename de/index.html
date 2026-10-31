@@ -36,7 +36,9 @@
             "Argo CD",
             "GitLab CI",
             "Python",
-            "Go"
+            "Go",
+            "Swift",
+            "TypeScript"
         ],
         "knowsLanguage": [
             "en",
@@ -141,6 +143,7 @@
                     <li><a href="#services">Leistungen</a></li>
                     <li><a href="#how-i-work">Arbeitsweise</a></li>
                     <li><a href="#work">Arbeitsbeispiele</a></li>
+                    <li><a href="#software">Softwareprojekte</a></li>
                     <li><a href="#about">Über mich</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
@@ -278,11 +281,33 @@
                 </div>
             </section>
 
+            <section id="software" class="section">
+                <div class="section-heading"><h2>Softwareprojekte</h2><p>Eigene Projekte, die zeigen, wie ich Software baue, nicht nur Infrastruktur.</p></div>
+                <div class="cases cases-short">
+                    <article class="case case-short" id="software-1">
+                        <h3>Analyseplattform: von über 40 Rohquellen zur Entscheidung</h3>
+                        <p>Eine durchgehende Pipeline, die Daten aus mehr als vierzig heterogenen Quellen aufnimmt, normalisiert und als Zeitreihen speichert, sie mit einer Regel-Engine und LLM-Analyse mit strukturierter Ausgabe bewertet und das Ergebnis dorthin liefert, wo Menschen handeln: Dashboards in einer Webanwendung, geplante Zusammenfassungen und ereignisgesteuerte Benachrichtigungen in Telegram, weitere Kanäle anschließbar. Engineering: Sammler mit Konsistenzprüfungen und Wiederanlauf nach Fehlern, Schemaänderungen nur über Migrationen, Architecture Decision Records, End-to-End- und Unit-Tests, Deployments mit Rollback. Python, PostgreSQL, TypeScript.</p>
+                    </article>
+                    <article class="case case-short" id="software-2">
+                        <h3>Pipeline für Spracherkennung und Zusammenfassung auf eigener GPU-Hardware</h3>
+                        <p>Beobachtet Video- und Audiokanäle, nutzt vorhandene Untertitel und transkribiert sonst auf einer GPU mit Sprachaktivitätserkennung und Unterdrückung halluzinierter Texte, fasst anschließend mit einem selbst gehosteten LLM zusammen und stellt die Ergebnisse in einer Webanwendung hinter OAuth bereit. Datenschutz als Grundeinstellung: nichts verlässt den Perimeter des Eigentümers, keine externen APIs. Die Erkennungsqualität ist je Sprache und Audiobedingung abgestimmt und dokumentiert. Python.</p>
+                    </article>
+                    <article class="case case-short" id="software-3">
+                        <h3>Secrets-Werkzeug für macOS mit hardwaregestützter Entsperrung</h3>
+                        <p>Ein Kommandozeilenwerkzeug in Swift, das das Master-Geheimnis des Passwortmanagers im Data Protection Keychain hält, es per Touch ID entsperrt und einen Post-Quanten-age-Schlüssel an SOPS zum Verschlüsseln von Repository-Secrets übergibt. Kein Netzwerkzugriff, keine Telemetrie, ein dokumentiertes Bedrohungsmodell.</p>
+                    </article>
+                    <article class="case case-short" id="software-4">
+                        <h3>Benchmark-Rahmen für LLM-Coding-Agenten</h3>
+                        <p>Dieselbe Aufgabe geht an mehrere Agenten; der Rahmen misst Tokens, Laufzeit und Kontingentverbrauch, ein separater Prüf-Agent bewertet die Ergebnisse nach einem Raster und schreibt den Bericht. Werkzeugentscheidungen fallen danach anhand von Zahlen statt Eindrücken.</p>
+                    </article>
+                </div>
+            </section>
+
             <section id="about" class="section">
                 <div class="section-heading"><h2>Über mich</h2></div>
                 <div class="prose">
                     <p>Planung und Entwicklung von Individualsoftware und Infrastruktur-Code, Cloud-Architektur und die damit verbundene fachliche Beratung für Unternehmen in der EU, den VAE und den USA. Sitz in München, Arbeit remote. Keine Lieferung von Hardware oder Lizenzen, kein laufender Betrieb.</p>
-                    <p>Hochschulabschluss in Rechenmaschinen, Komplexe, Systeme und Netze (GUAP St. Petersburg, 2002); mehr als 20 Jahre in Infrastruktur und Softwareentwicklung. Seit 2025 freiberuflich in München tätig. Sprachen: Deutsch, Englisch, Russisch.</p>
+                    <p>Hochschulabschluss in Rechenmaschinen, Komplexe, Systeme und Netze (GUAP St. Petersburg, 2002); mehr als 20 Jahre in Infrastruktur und Softwareentwicklung. Programmiersprachen: Python, Go, Swift, TypeScript, Bash. Seit 2025 freiberuflich in München tätig. Sprachen: Deutsch, Englisch, Russisch.</p>
                 </div>
                 <ul class="tech">
                     <li>Kubernetes</li>
