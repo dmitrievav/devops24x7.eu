@@ -285,20 +285,20 @@
                 <div class="section-heading"><h2>Software work</h2><p>Own projects that show how I build software, not only infrastructure.</p></div>
                 <div class="cases cases-short">
                     <article class="case case-short" id="software-1">
-                        <h3>Data platform collecting from 40+ heterogeneous sources</h3>
-                        <p>Python 3.12, PostgreSQL with TimescaleDB, Next.js, Docker Compose. Collectors with consistency checks and recovery after failures, LLM analysis with structured output, digests and alerts in Telegram. More than 250 SQL migrations as the only way to change the schema, architecture decision records, pytest and Playwright tests, deployment with rollback by commit SHA.</p>
+                        <h3>Analytics platform: from 40+ raw sources to decisions</h3>
+                        <p>An end-to-end pipeline that ingests data from more than forty heterogeneous sources, normalises and stores it as time series, scores it with a rule engine and LLM analysis with structured output, and delivers the result where people act on it: dashboards in a web application, scheduled digests and event-driven alerts in Telegram, with other channels pluggable. Engineering: collectors with consistency checks and recovery after failures, schema changes only through migrations, architecture decision records, end-to-end and unit tests, deployments with rollback. Python, PostgreSQL, TypeScript.</p>
                     </article>
                     <article class="case case-short" id="software-2">
-                        <h3>Video-channel monitor with transcription</h3>
-                        <p>Python, SQLite, Docker Compose. RSS intake, subtitles where available, otherwise speech recognition on a GPU (faster-whisper, whisper.cpp) with voice activity detection and suppression of hallucinated text, summaries by a local LLM via Ollama, web UI with OAuth. All data stays on the local network; ASR tuning is documented.</p>
+                        <h3>Speech-to-text and summarisation pipeline on own GPU hardware</h3>
+                        <p>Monitors video and audio channels, takes subtitles where they exist and otherwise transcribes on a GPU with voice activity detection and suppression of hallucinated text, then summarises with a locally hosted LLM and serves the results in a web application behind OAuth. Designed for privacy by default: nothing leaves the owner's perimeter, no external APIs. Recognition quality is tuned and documented per language and audio condition. Python.</p>
                     </article>
                     <article class="case case-short" id="software-3">
-                        <h3>Secrets CLI for macOS in Swift</h3>
-                        <p>The password manager's master password lives in the Data Protection Keychain and is unlocked with Touch ID; the tool hands a post-quantum age key to SOPS. No network, no telemetry; the security model is documented.</p>
+                        <h3>Secrets tool for macOS with hardware-backed unlock</h3>
+                        <p>A command-line tool in Swift that keeps the password manager's master secret in the Data Protection Keychain, unlocks it with Touch ID and hands a post-quantum age key to SOPS for encrypting repository secrets. Zero network access, zero telemetry, a documented threat model.</p>
                     </article>
                     <article class="case case-short" id="software-4">
-                        <h3>Method for comparing LLM coding agents</h3>
-                        <p>One task, several agents, measured tokens, time and quota use; the results are judged by a separate evaluator agent against a rubric and compiled into a report. Used to choose tools with numbers instead of impressions.</p>
+                        <h3>Benchmark harness for LLM coding agents</h3>
+                        <p>The same task is given to several agents; the harness measures tokens, wall-clock time and quota use, and a separate evaluator agent scores the results against a rubric and writes the report. Tool choices are then made on numbers rather than impressions.</p>
                     </article>
                 </div>
             </section>

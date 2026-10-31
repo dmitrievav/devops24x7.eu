@@ -285,20 +285,20 @@
                 <div class="section-heading"><h2>Softwareprojekte</h2><p>Eigene Projekte, die zeigen, wie ich Software baue, nicht nur Infrastruktur.</p></div>
                 <div class="cases cases-short">
                     <article class="case case-short" id="software-1">
-                        <h3>Datenplattform, die aus über 40 heterogenen Quellen sammelt</h3>
-                        <p>Python 3.12, PostgreSQL mit TimescaleDB, Next.js, Docker Compose. Sammler mit Konsistenzprüfungen und Wiederanlauf nach Fehlern, LLM-Analyse mit strukturierter Ausgabe, Zusammenfassungen und Benachrichtigungen in Telegram. Mehr als 250 SQL-Migrationen als einziger Weg, das Schema zu ändern, Architecture Decision Records, Tests mit pytest und Playwright, Deployment mit Rollback per Commit-SHA.</p>
+                        <h3>Analyseplattform: von über 40 Rohquellen zur Entscheidung</h3>
+                        <p>Eine durchgehende Pipeline, die Daten aus mehr als vierzig heterogenen Quellen aufnimmt, normalisiert und als Zeitreihen speichert, sie mit einer Regel-Engine und LLM-Analyse mit strukturierter Ausgabe bewertet und das Ergebnis dorthin liefert, wo Menschen handeln: Dashboards in einer Webanwendung, geplante Zusammenfassungen und ereignisgesteuerte Benachrichtigungen in Telegram, weitere Kanäle anschließbar. Engineering: Sammler mit Konsistenzprüfungen und Wiederanlauf nach Fehlern, Schemaänderungen nur über Migrationen, Architecture Decision Records, End-to-End- und Unit-Tests, Deployments mit Rollback. Python, PostgreSQL, TypeScript.</p>
                     </article>
                     <article class="case case-short" id="software-2">
-                        <h3>Monitor für Videokanäle mit Transkription</h3>
-                        <p>Python, SQLite, Docker Compose. RSS-Eingang, Untertitel wo vorhanden, sonst Spracherkennung auf einer GPU (faster-whisper, whisper.cpp) mit Sprachaktivitätserkennung und Unterdrückung halluzinierter Texte, Zusammenfassungen durch ein lokales LLM über Ollama, Web-UI mit OAuth. Alle Daten bleiben im lokalen Netz; das ASR-Tuning ist dokumentiert.</p>
+                        <h3>Pipeline für Spracherkennung und Zusammenfassung auf eigener GPU-Hardware</h3>
+                        <p>Beobachtet Video- und Audiokanäle, nutzt vorhandene Untertitel und transkribiert sonst auf einer GPU mit Sprachaktivitätserkennung und Unterdrückung halluzinierter Texte, fasst anschließend mit einem selbst gehosteten LLM zusammen und stellt die Ergebnisse in einer Webanwendung hinter OAuth bereit. Datenschutz als Grundeinstellung: nichts verlässt den Perimeter des Eigentümers, keine externen APIs. Die Erkennungsqualität ist je Sprache und Audiobedingung abgestimmt und dokumentiert. Python.</p>
                     </article>
                     <article class="case case-short" id="software-3">
-                        <h3>Secrets-CLI für macOS in Swift</h3>
-                        <p>Das Master-Passwort des Passwortmanagers liegt im Data Protection Keychain und wird per Touch ID entsperrt; das Werkzeug übergibt einen Post-Quanten-age-Schlüssel an SOPS. Kein Netzwerk, keine Telemetrie; das Sicherheitsmodell ist dokumentiert.</p>
+                        <h3>Secrets-Werkzeug für macOS mit hardwaregestützter Entsperrung</h3>
+                        <p>Ein Kommandozeilenwerkzeug in Swift, das das Master-Geheimnis des Passwortmanagers im Data Protection Keychain hält, es per Touch ID entsperrt und einen Post-Quanten-age-Schlüssel an SOPS zum Verschlüsseln von Repository-Secrets übergibt. Kein Netzwerkzugriff, keine Telemetrie, ein dokumentiertes Bedrohungsmodell.</p>
                     </article>
                     <article class="case case-short" id="software-4">
-                        <h3>Methode zum Vergleich von LLM-Coding-Agenten</h3>
-                        <p>Eine Aufgabe, mehrere Agenten, gemessene Tokens, Zeit und Kontingentverbrauch; die Ergebnisse bewertet ein separater Prüf-Agent nach einem Raster und fasst sie in einem Bericht zusammen. Dient der Werkzeugwahl mit Zahlen statt Eindrücken.</p>
+                        <h3>Benchmark-Rahmen für LLM-Coding-Agenten</h3>
+                        <p>Dieselbe Aufgabe geht an mehrere Agenten; der Rahmen misst Tokens, Laufzeit und Kontingentverbrauch, ein separater Prüf-Agent bewertet die Ergebnisse nach einem Raster und schreibt den Bericht. Werkzeugentscheidungen fallen danach anhand von Zahlen statt Eindrücken.</p>
                     </article>
                 </div>
             </section>
