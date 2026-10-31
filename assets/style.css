@@ -195,6 +195,15 @@ svg {
     hyphens: auto;
 }
 
+:lang(de) .headline,
+:lang(ru) .headline {
+    font-size: clamp(36px, 4.2vw, 58px);
+}
+
+:lang(ru) .headline {
+    hyphens: manual;
+}
+
 .person {
     font-size: 17px;
     margin-top: 28px;
@@ -255,35 +264,24 @@ svg {
     font-size: 14px;
 }
 
+.not-found-links {
+    list-style: none;
+    padding: 0;
+}
+
 .portrait {
     margin: 0;
-    background: var(--brand-soft);
-    border: 1px solid var(--line);
-    padding: 12px;
 }
 
 .portrait img {
     display: block;
+    border: 1px solid var(--line);
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
 }
 
-.hero-end {
-    display: flex;
-    justify-content: space-between;
-    gap: 22px;
-    flex-wrap: wrap;
-    border-top: 1px solid var(--line);
-    padding-top: 23px;
-    margin-top: 52px;
-    padding-left: 0;
-    list-style: none;
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: .03em;
-}
 
 /* Sections */
 
@@ -541,6 +539,11 @@ svg {
         font-size: 42px;
     }
 
+    :lang(de) .headline,
+    :lang(ru) .headline {
+        font-size: 37px;
+    }
+
     .process {
         grid-template-columns: 1fr 1fr;
     }
@@ -588,12 +591,16 @@ svg {
     .hero-grid > .portrait {
         width: 100%;
         max-width: 260px;
-        order: -1;
     }
 
     .headline {
         font-size: 36px;
         letter-spacing: -.045em;
+    }
+
+    :lang(de) .headline,
+    :lang(ru) .headline {
+        font-size: 31px;
     }
 
     .eyebrow {
@@ -613,10 +620,6 @@ svg {
         font-size: 18px;
     }
 
-    .hero-end {
-        margin-top: 34px;
-        gap: 12px;
-    }
 
     .section {
         padding: 42px 0;
