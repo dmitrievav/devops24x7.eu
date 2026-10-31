@@ -20,15 +20,11 @@
         a { color: #5a3d8a; overflow-wrap: anywhere; }
         footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.9rem; }
         footer a { margin-right: 1rem; }
-        .noscript { padding: 0.8rem; background: #fff3cd; border: 1px solid #e0c36c; }
         .translation-note { padding: 0.8rem; background: #f0ebf8; border-radius: 6px; }
     </style>
 </head>
 <body>
     <main>
-        <noscript>
-            <p class="noscript">Для отображения контактных данных этой странице нужен JavaScript. Включите, пожалуйста, JavaScript в браузере.</p>
-        </noscript>
         <h1>Информация о защите персональных данных</h1>
 
         <p class="translation-note">Это перевод немецкой <a href="/datenschutz.html" hreflang="de">Datenschutzerklärung</a>. При расхождениях действует немецкая версия.</p>
@@ -36,10 +32,10 @@
         <h2>1. Ответственное лицо (Verantwortlicher)</h2>
         <p>
             Aleksey Dmitriev<br>
-            <span data-legal="street"></span><br>
-            <span data-legal="city"></span><br>
+            {{LEGAL_STREET}}<br>
+            {{LEGAL_CITY}}<br>
             Германия<br>
-            E-mail: <span data-legal="email"></span>
+            E-mail: <a href="mailto:{{LEGAL_EMAIL}}">{{LEGAL_EMAIL}}</a>
         </p>
 
         <h2>2. Коротко</h2>
@@ -75,6 +71,5 @@
         <a href="/privacy.html" hreflang="en" lang="en">English</a>
     </footer>
 
-    <script src="/assets/legal.js"></script>
 </body>
 </html>
