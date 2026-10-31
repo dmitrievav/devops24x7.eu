@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.devops24x7.eu/sitemap.xml
+Sitemap: https://devops24x7.eu/sitemap.xml
