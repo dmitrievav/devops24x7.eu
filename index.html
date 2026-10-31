@@ -36,7 +36,9 @@
             "Argo CD",
             "GitLab CI",
             "Python",
-            "Go"
+            "Go",
+            "Swift",
+            "TypeScript"
         ],
         "knowsLanguage": [
             "en",
@@ -141,6 +143,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#how-i-work">How I work</a></li>
                     <li><a href="#work">Work examples</a></li>
+                    <li><a href="#software">Software work</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -278,11 +281,33 @@
                 </div>
             </section>
 
+            <section id="software" class="section">
+                <div class="section-heading"><h2>Software work</h2><p>Own projects that show how I build software, not only infrastructure.</p></div>
+                <div class="cases cases-short">
+                    <article class="case case-short" id="software-1">
+                        <h3>Data platform collecting from 40+ heterogeneous sources</h3>
+                        <p>Python 3.12, PostgreSQL with TimescaleDB, Next.js, Docker Compose. Collectors with consistency checks and recovery after failures, LLM analysis with structured output, digests and alerts in Telegram. More than 250 SQL migrations as the only way to change the schema, architecture decision records, pytest and Playwright tests, deployment with rollback by commit SHA.</p>
+                    </article>
+                    <article class="case case-short" id="software-2">
+                        <h3>Video-channel monitor with transcription</h3>
+                        <p>Python, SQLite, Docker Compose. RSS intake, subtitles where available, otherwise speech recognition on a GPU (faster-whisper, whisper.cpp) with voice activity detection and suppression of hallucinated text, summaries by a local LLM via Ollama, web UI with OAuth. All data stays on the local network; ASR tuning is documented.</p>
+                    </article>
+                    <article class="case case-short" id="software-3">
+                        <h3>Secrets CLI for macOS in Swift</h3>
+                        <p>The password manager's master password lives in the Data Protection Keychain and is unlocked with Touch ID; the tool hands a post-quantum age key to SOPS. No network, no telemetry; the security model is documented.</p>
+                    </article>
+                    <article class="case case-short" id="software-4">
+                        <h3>Method for comparing LLM coding agents</h3>
+                        <p>One task, several agents, measured tokens, time and quota use; the results are judged by a separate evaluator agent against a rubric and compiled into a report. Used to choose tools with numbers instead of impressions.</p>
+                    </article>
+                </div>
+            </section>
+
             <section id="about" class="section">
                 <div class="section-heading"><h2>About</h2></div>
                 <div class="prose">
                     <p>Design and development of custom software and infrastructure code, cloud architecture and related technical consulting for companies in the EU, UAE and US. Based in Munich, working remotely. No supply of hardware or licences, no ongoing operations.</p>
-                    <p>University degree (Specialist) in computer systems and networks (GUAP, St. Petersburg, 2002), more than 20 years in infrastructure and software development. Self-employed in Munich since 2025 as a Freiberufler (liberal profession under German law). Languages: English, German, Russian.</p>
+                    <p>University degree (Specialist) in computer systems and networks (GUAP, St. Petersburg, 2002), more than 20 years in infrastructure and software development. Languages I write in: Python, Go, Swift, TypeScript, Bash. Self-employed in Munich since 2025 as a Freiberufler (liberal profession under German law). Languages: English, German, Russian.</p>
                 </div>
                 <ul class="tech">
                     <li>Kubernetes</li>

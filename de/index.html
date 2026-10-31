@@ -36,7 +36,9 @@
             "Argo CD",
             "GitLab CI",
             "Python",
-            "Go"
+            "Go",
+            "Swift",
+            "TypeScript"
         ],
         "knowsLanguage": [
             "en",
@@ -141,6 +143,7 @@
                     <li><a href="#services">Leistungen</a></li>
                     <li><a href="#how-i-work">Arbeitsweise</a></li>
                     <li><a href="#work">Arbeitsbeispiele</a></li>
+                    <li><a href="#software">Softwareprojekte</a></li>
                     <li><a href="#about">Über mich</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
@@ -278,11 +281,33 @@
                 </div>
             </section>
 
+            <section id="software" class="section">
+                <div class="section-heading"><h2>Softwareprojekte</h2><p>Eigene Projekte, die zeigen, wie ich Software baue, nicht nur Infrastruktur.</p></div>
+                <div class="cases cases-short">
+                    <article class="case case-short" id="software-1">
+                        <h3>Datenplattform, die aus über 40 heterogenen Quellen sammelt</h3>
+                        <p>Python 3.12, PostgreSQL mit TimescaleDB, Next.js, Docker Compose. Sammler mit Konsistenzprüfungen und Wiederanlauf nach Fehlern, LLM-Analyse mit strukturierter Ausgabe, Zusammenfassungen und Benachrichtigungen in Telegram. Mehr als 250 SQL-Migrationen als einziger Weg, das Schema zu ändern, Architecture Decision Records, Tests mit pytest und Playwright, Deployment mit Rollback per Commit-SHA.</p>
+                    </article>
+                    <article class="case case-short" id="software-2">
+                        <h3>Monitor für Videokanäle mit Transkription</h3>
+                        <p>Python, SQLite, Docker Compose. RSS-Eingang, Untertitel wo vorhanden, sonst Spracherkennung auf einer GPU (faster-whisper, whisper.cpp) mit Sprachaktivitätserkennung und Unterdrückung halluzinierter Texte, Zusammenfassungen durch ein lokales LLM über Ollama, Web-UI mit OAuth. Alle Daten bleiben im lokalen Netz; das ASR-Tuning ist dokumentiert.</p>
+                    </article>
+                    <article class="case case-short" id="software-3">
+                        <h3>Secrets-CLI für macOS in Swift</h3>
+                        <p>Das Master-Passwort des Passwortmanagers liegt im Data Protection Keychain und wird per Touch ID entsperrt; das Werkzeug übergibt einen Post-Quanten-age-Schlüssel an SOPS. Kein Netzwerk, keine Telemetrie; das Sicherheitsmodell ist dokumentiert.</p>
+                    </article>
+                    <article class="case case-short" id="software-4">
+                        <h3>Methode zum Vergleich von LLM-Coding-Agenten</h3>
+                        <p>Eine Aufgabe, mehrere Agenten, gemessene Tokens, Zeit und Kontingentverbrauch; die Ergebnisse bewertet ein separater Prüf-Agent nach einem Raster und fasst sie in einem Bericht zusammen. Dient der Werkzeugwahl mit Zahlen statt Eindrücken.</p>
+                    </article>
+                </div>
+            </section>
+
             <section id="about" class="section">
                 <div class="section-heading"><h2>Über mich</h2></div>
                 <div class="prose">
                     <p>Planung und Entwicklung von Individualsoftware und Infrastruktur-Code, Cloud-Architektur und die damit verbundene fachliche Beratung für Unternehmen in der EU, den VAE und den USA. Sitz in München, Arbeit remote. Keine Lieferung von Hardware oder Lizenzen, kein laufender Betrieb.</p>
-                    <p>Hochschulabschluss in Rechenmaschinen, Komplexe, Systeme und Netze (GUAP St. Petersburg, 2002); mehr als 20 Jahre in Infrastruktur und Softwareentwicklung. Seit 2025 freiberuflich in München tätig. Sprachen: Deutsch, Englisch, Russisch.</p>
+                    <p>Hochschulabschluss in Rechenmaschinen, Komplexe, Systeme und Netze (GUAP St. Petersburg, 2002); mehr als 20 Jahre in Infrastruktur und Softwareentwicklung. Programmiersprachen: Python, Go, Swift, TypeScript, Bash. Seit 2025 freiberuflich in München tätig. Sprachen: Deutsch, Englisch, Russisch.</p>
                 </div>
                 <ul class="tech">
                     <li>Kubernetes</li>
