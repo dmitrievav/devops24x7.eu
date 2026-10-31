@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI auf autoskalierenden Runnern: GitLab CI oder GitHub Actions, x86 und ARM · Aleksey Dmitriev</title>
+    <meta name="description" content="Runner-Flotten auf AWS, skaliert nach Warteschlange, Spot wo Builds es erlauben, Cache und Artefakte im Objektspeicher, OIDC statt statischer Schlüssel, Migrationsplan mit Testwoche an echten Jobs.">
+    <link rel="canonical" href="https://devops24x7.eu/de/ci-runners-autoscaling/">
+    <link rel="alternate" hreflang="en" href="https://devops24x7.eu/ci-runners-autoscaling/">
+    <link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/ci-runners-autoscaling/">
+    <link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/ci-runners-autoscaling/">
+    <link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/ci-runners-autoscaling/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:url" content="https://devops24x7.eu/de/ci-runners-autoscaling/">
+    <meta property="og:title" content="CI auf autoskalierenden Runnern: GitLab CI oder GitHub Actions, x86 und ARM · Aleksey Dmitriev">
+    <meta property="og:description" content="Runner-Flotten auf AWS, skaliert nach Warteschlange, Spot wo Builds es erlauben, Cache und Artefakte im Objektspeicher, OIDC statt statischer Schlüssel, Migrationsplan mit Testwoche an echten Jobs.">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+</head>
+<body>
+    <a href="#main" class="skip">Zum Inhalt springen</a>
+    <div class="wrap">
+        <header class="site-header">
+            <a class="brand" href="/de/"><svg viewBox="0 0 60 60" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 51V43H42L44 33L49 31L44 23C44 12 37 8 29 9M28 10V50M28 20H19L13 14M28 29H9M28 37H18L12 44"/><circle cx="12" cy="12" r="3"/><circle cx="7" cy="29" r="3"/><circle cx="10" cy="46" r="3"/></svg>devops24x7</a>
+            <nav class="navigation" aria-label="Hauptnavigation">
+                <ul class="nav-links">
+                    <li><a href="/de/#services">Leistungen</a></li>
+                    <li><a href="/de/#how-i-work">Arbeitsweise</a></li>
+                    <li><a href="/de/#work">Arbeitsbeispiele</a></li>
+                    <li><a href="/de/#about">Über mich</a></li>
+                    <li><a href="/de/#contact">Kontakt</a></li>
+                </ul>
+                <ul class="lang-switch" aria-label="Sprache">
+                    <li><a href="/ci-runners-autoscaling/" hreflang="en" lang="en">EN</a></li>
+                    <li><a href="/de/ci-runners-autoscaling/" hreflang="de" lang="de" aria-current="page">DE</a></li>
+                    <li><a href="/ru/ci-runners-autoscaling/" hreflang="ru" lang="ru">RU</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main">
+            <section class="hero hero-page">
+                <p class="eyebrow"><a href="/de/#services">Leistungen</a></p>
+                <h1 class="headline headline-page">CI auf autoskalierenden Runnern: GitLab CI oder GitHub Actions, x86 und ARM</h1>
+            </section>
+
+            <section class="section">
+                <div class="solution">
+                    <div class="solution-block">
+                        <h2>Wann Sie das brauchen</h2>
+                        <p>Builds warten stundenlang in der Warteschlange, statische Runner sind von Hand konfiguriert und laufen voll, der Artefaktspeicher läuft über und die Kosten der CI sind undurchsichtig. Oder Sie wechseln von einer CI zur anderen und wollen es von Anfang an richtig machen.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Was Sie bekommen</h2>
+                        <p>Runner-Flotten auf AWS, skaliert nach Warteschlange, x86 und ARM getrennt, Spot wo Builds es vertragen, als Code beschrieben und per GitOps ausgerollt. Build-Cache und Artefakte im Objektspeicher mit Aufbewahrungsregeln. Für GitHub Actions: OIDC zu AWS statt statischer Schlüssel. Ein einheitlicher Deploy-Flow über Repositories hinweg. Für selbst gehostetes GitLab: eine Upgrade-Prozedur für den Server mit Prüfung der Hintergrundmigrationen, Aufbewahrung der CI-Historie, Image-Aufbewahrungsregeln in ECR. Ein Migrationsplan mit einer Testwoche an echten Jobs und stufenweiser Abschaltung der alten Runner.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Typische Dauer</h2>
+                        <p>Flotten und Migration des ersten Projekts: 3–5 Wochen. Vollständige Abschaltung der alten Runner je nach Zahl der Projekte, meist 6–10 Wochen. Schätzung nach einem ersten Gespräch.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Zugehörige Arbeiten</h2>
+                        <p>Arbeitsbeispiele <a href="/de/#work-2">2</a> und <a href="/de/#work-6">6</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="section-heading"><h2>Kontakt</h2></div>
+                <ul class="contact-list">
+                    <li>E-Mail: <span class="email" data-u="{{LEGAL_EMAIL_USER}}" data-d="{{LEGAL_EMAIL_DOMAIN}}"></span><noscript>(bitte JavaScript aktivieren, um die Adresse zu sehen)</noscript></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/devops24x7" rel="noopener">linkedin.com/in/devops24x7</a></li>
+                    <li>Telegram: <a href="https://t.me/devops24x7" rel="noopener">t.me/devops24x7</a></li>
+                    <li>Zeitzone: MEZ (München)</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <span>devops24x7 · Aleksey Dmitriev</span>
+            <a href="/impressum.html">Impressum</a>
+            <a href="/datenschutz.html">Datenschutz</a>
+        </footer>
+    </div>
+
+    <script src="/assets/email.js"></script>
+</body>
+</html>

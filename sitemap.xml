@@ -25,4 +25,100 @@
         <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/"/>
     </url>
+    <url>
+        <loc>https://devops24x7.eu/aws-eks-platform/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/aws-eks-platform/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/de/aws-eks-platform/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/aws-eks-platform/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/ru/aws-eks-platform/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/aws-eks-platform/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/aws-eks-platform/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/aws-cost-reduction/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/aws-cost-reduction/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/de/aws-cost-reduction/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/aws-cost-reduction/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/ru/aws-cost-reduction/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/aws-cost-reduction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/aws-cost-reduction/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/ci-runners-autoscaling/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/ci-runners-autoscaling/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/de/ci-runners-autoscaling/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/ci-runners-autoscaling/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/ru/ci-runners-autoscaling/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/ci-runners-autoscaling/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/ci-runners-autoscaling/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/bare-metal-as-code/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/bare-metal-as-code/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/de/bare-metal-as-code/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/bare-metal-as-code/"/>
+    </url>
+    <url>
+        <loc>https://devops24x7.eu/ru/bare-metal-as-code/</loc>
+        <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://devops24x7.eu/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/bare-metal-as-code/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/bare-metal-as-code/"/>
+    </url>
 </urlset>

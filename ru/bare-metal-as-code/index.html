@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bare-metal под вычисления, невыгодные в облаке, управляемый как код · Aleksey Dmitriev</title>
+    <meta name="description" content="Арендованные серверы с дисциплиной облака: бутстрап Ansible, RAID и LUKS, объектное хранилище без ключей на хостах, документированные процедуры для нод. Пилот за 2–3 недели.">
+    <link rel="canonical" href="https://devops24x7.eu/ru/bare-metal-as-code/">
+    <link rel="alternate" hreflang="en" href="https://devops24x7.eu/bare-metal-as-code/">
+    <link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/bare-metal-as-code/">
+    <link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/bare-metal-as-code/">
+    <link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/bare-metal-as-code/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://devops24x7.eu/ru/bare-metal-as-code/">
+    <meta property="og:title" content="Bare-metal под вычисления, невыгодные в облаке, управляемый как код · Aleksey Dmitriev">
+    <meta property="og:description" content="Арендованные серверы с дисциплиной облака: бутстрап Ansible, RAID и LUKS, объектное хранилище без ключей на хостах, документированные процедуры для нод. Пилот за 2–3 недели.">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+</head>
+<body>
+    <a href="#main" class="skip">Перейти к содержанию</a>
+    <div class="wrap">
+        <header class="site-header">
+            <a class="brand" href="/ru/"><svg viewBox="0 0 60 60" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 51V43H42L44 33L49 31L44 23C44 12 37 8 29 9M28 10V50M28 20H19L13 14M28 29H9M28 37H18L12 44"/><circle cx="12" cy="12" r="3"/><circle cx="7" cy="29" r="3"/><circle cx="10" cy="46" r="3"/></svg>devops24x7</a>
+            <nav class="navigation" aria-label="Основная навигация">
+                <ul class="nav-links">
+                    <li><a href="/ru/#services">Услуги</a></li>
+                    <li><a href="/ru/#how-i-work">Как я работаю</a></li>
+                    <li><a href="/ru/#work">Примеры работ</a></li>
+                    <li><a href="/ru/#about">Обо мне</a></li>
+                    <li><a href="/ru/#contact">Контакты</a></li>
+                </ul>
+                <ul class="lang-switch" aria-label="Язык">
+                    <li><a href="/bare-metal-as-code/" hreflang="en" lang="en">EN</a></li>
+                    <li><a href="/de/bare-metal-as-code/" hreflang="de" lang="de">DE</a></li>
+                    <li><a href="/ru/bare-metal-as-code/" hreflang="ru" lang="ru" aria-current="page">RU</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main">
+            <section class="hero hero-page">
+                <p class="eyebrow"><a href="/ru/#services">Услуги</a></p>
+                <h1 class="headline headline-page">Bare-metal под вычисления, невыгодные в облаке, управляемый как код</h1>
+            </section>
+
+            <section class="section">
+                <div class="solution">
+                    <div class="solution-block">
+                        <h2>Когда это нужно</h2>
+                        <p>Нагрузки с большими объёмами данных и быстрыми локальными дисками, например ML-эксперименты, обработка данных или сборочные фермы, стоят в облаке несоразмерно дорого, но команда избегает «железа», потому что его некому воспроизводить.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Что вы получаете</h2>
+                        <p>Кластер на арендованных серверах (Hetzner или аналог), управляемый как код: установка и бутстрап через Ansible, RAID и LUKS по вашим требованиям к данным, доступ к объектному хранилищу без ключей на хостах, проверка доступности нужных конфигураций серверов у провайдера, базовая наблюдаемость. Документированную процедуру ввода, вывода и переустановки ноды и инструкцию для пользователей кластера. Передачу: следующую ноду ваша команда вводит сама по процедуре.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Обычная длительность</h2>
+                        <p>Пилот из 2–3 нод: 2–3 недели. Расширение до десятка нод и передача: ещё 2–4 недели. Оценка после первого разговора.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Связанные работы</h2>
+                        <p>Пример <a href="/ru/#work-3">3</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="section-heading"><h2>Контакты</h2></div>
+                <ul class="contact-list">
+                    <li>E-mail: <span class="email" data-u="{{LEGAL_EMAIL_USER}}" data-d="{{LEGAL_EMAIL_DOMAIN}}"></span><noscript>(включите JavaScript, чтобы увидеть адрес)</noscript></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/devops24x7" rel="noopener">linkedin.com/in/devops24x7</a></li>
+                    <li>Telegram: <a href="https://t.me/devops24x7" rel="noopener">t.me/devops24x7</a></li>
+                    <li>Часовой пояс: CET (Мюнхен)</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <span>devops24x7 · Aleksey Dmitriev</span>
+            <a href="/impressum.html">Impressum (Правовая информация)</a>
+            <a href="/ru/privacy.html">Защита данных</a>
+        </footer>
+    </div>
+
+    <script src="/assets/email.js"></script>
+</body>
+</html>
