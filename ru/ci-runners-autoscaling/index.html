@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI на автоскейлящихся раннерах: GitLab CI или GitHub Actions, x86 и ARM · Aleksey Dmitriev</title>
+    <meta name="description" content="Раннер-флоты в AWS под очередь, spot там, где сборки это допускают, кэш и артефакты в объектном хранилище, OIDC вместо статических ключей, план миграции с тестовой неделей на реальных джобах.">
+    <link rel="canonical" href="https://devops24x7.eu/ru/ci-runners-autoscaling/">
+    <link rel="alternate" hreflang="en" href="https://devops24x7.eu/ci-runners-autoscaling/">
+    <link rel="alternate" hreflang="de" href="https://devops24x7.eu/de/ci-runners-autoscaling/">
+    <link rel="alternate" hreflang="ru" href="https://devops24x7.eu/ru/ci-runners-autoscaling/">
+    <link rel="alternate" hreflang="x-default" href="https://devops24x7.eu/ci-runners-autoscaling/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://devops24x7.eu/ru/ci-runners-autoscaling/">
+    <meta property="og:title" content="CI на автоскейлящихся раннерах: GitLab CI или GitHub Actions, x86 и ARM · Aleksey Dmitriev">
+    <meta property="og:description" content="Раннер-флоты в AWS под очередь, spot там, где сборки это допускают, кэш и артефакты в объектном хранилище, OIDC вместо статических ключей, план миграции с тестовой неделей на реальных джобах.">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+</head>
+<body>
+    <a href="#main" class="skip">Перейти к содержанию</a>
+    <div class="wrap">
+        <header class="site-header">
+            <a class="brand" href="/ru/"><svg viewBox="0 0 60 60" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 51V43H42L44 33L49 31L44 23C44 12 37 8 29 9M28 10V50M28 20H19L13 14M28 29H9M28 37H18L12 44"/><circle cx="12" cy="12" r="3"/><circle cx="7" cy="29" r="3"/><circle cx="10" cy="46" r="3"/></svg>devops24x7</a>
+            <nav class="navigation" aria-label="Основная навигация">
+                <ul class="nav-links">
+                    <li><a href="/ru/#services">Услуги</a></li>
+                    <li><a href="/ru/#how-i-work">Как я работаю</a></li>
+                    <li><a href="/ru/#work">Примеры работ</a></li>
+                    <li><a href="/ru/#about">Обо мне</a></li>
+                    <li><a href="/ru/#contact">Контакты</a></li>
+                </ul>
+                <ul class="lang-switch" aria-label="Язык">
+                    <li><a href="/ci-runners-autoscaling/" hreflang="en" lang="en">EN</a></li>
+                    <li><a href="/de/ci-runners-autoscaling/" hreflang="de" lang="de">DE</a></li>
+                    <li><a href="/ru/ci-runners-autoscaling/" hreflang="ru" lang="ru" aria-current="page">RU</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main">
+            <section class="hero hero-page">
+                <p class="eyebrow"><a href="/ru/#services">Услуги</a></p>
+                <h1 class="headline headline-page">CI на автоскейлящихся раннерах: GitLab CI или GitHub Actions, x86 и ARM</h1>
+            </section>
+
+            <section class="section">
+                <div class="solution">
+                    <div class="solution-block">
+                        <h2>Когда это нужно</h2>
+                        <p>Сборки стоят в очереди часами, статические раннеры настроены руками и забиваются, хранилище артефактов переполняется, а стоимость CI непрозрачна. Или вы переезжаете с одного CI на другой и хотите сразу сделать правильно.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Что вы получаете</h2>
+                        <p>Раннер-флоты в AWS с автоскейлингом под очередь, отдельно x86 и ARM, spot там, где сборки это допускают, описанные кодом и разворачиваемые через GitOps. Кэш сборок и артефакты в объектном хранилище с политиками хранения. Для GitHub Actions: OIDC к AWS вместо статических ключей. Единый deploy-flow для репозиториев. Для self-hosted GitLab: процедуру апгрейда сервера с проверкой фоновых миграций, сроки хранения CI-истории, политики хранения образов в ECR. План миграции с тестовой неделей на реальных джобах и поэтапным выводом старых раннеров.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Обычная длительность</h2>
+                        <p>Флоты и миграция первого проекта: 3–5 недель. Полный вывод старых раннеров зависит от числа проектов, обычно 6–10 недель. Оценка после первого разговора.</p>
+                    </div>
+                    <div class="solution-block">
+                        <h2>Связанные работы</h2>
+                        <p>Примеры <a href="/ru/#work-2">2</a> и <a href="/ru/#work-6">6</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="section-heading"><h2>Контакты</h2></div>
+                <ul class="contact-list">
+                    <li>E-mail: <span class="email" data-u="{{LEGAL_EMAIL_USER}}" data-d="{{LEGAL_EMAIL_DOMAIN}}"></span><noscript>(включите JavaScript, чтобы увидеть адрес)</noscript></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/devops24x7" rel="noopener">linkedin.com/in/devops24x7</a></li>
+                    <li>Telegram: <a href="https://t.me/devops24x7" rel="noopener">t.me/devops24x7</a></li>
+                    <li>Часовой пояс: CET (Мюнхен)</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <span>devops24x7 · Aleksey Dmitriev</span>
+            <a href="/impressum.html">Impressum (Правовая информация)</a>
+            <a href="/ru/privacy.html">Защита данных</a>
+        </footer>
+    </div>
+
+    <script src="/assets/email.js"></script>
+</body>
+</html>
