@@ -1,0 +1,9 @@
+# Internal working documents (public repo)
+CLAUDE.md
+docs/
+.claude/settings.local.json
+.DS_Store
+
+# Plaintext source for encrypted legal data (assets/legal.json)
+private/
+.playwright-mcp/
