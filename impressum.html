@@ -20,32 +20,28 @@
         a { color: #5a3d8a; }
         footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.9rem; }
         footer a { margin-right: 1rem; }
-        .noscript { padding: 0.8rem; background: #fff3cd; border: 1px solid #e0c36c; }
     </style>
 </head>
 <body>
     <main>
-        <noscript>
-            <p class="noscript">Diese Seite benötigt JavaScript, um die Kontaktdaten anzuzeigen. Bitte aktivieren Sie JavaScript in Ihrem Browser.</p>
-        </noscript>
         <h1>Impressum</h1>
 
         <h2>Angaben gemäß § 5 DDG</h2>
         <p>
             Aleksey Dmitriev<br>
-            <span data-legal="street"></span><br>
-            <span data-legal="city"></span><br>
+            {{LEGAL_STREET}}<br>
+            {{LEGAL_CITY}}<br>
             Deutschland
         </p>
 
         <h2>Kontakt</h2>
         <p>
-            E-Mail: <span data-legal="email"></span><br>
+            E-Mail: <a href="mailto:{{LEGAL_EMAIL}}">{{LEGAL_EMAIL}}</a><br>
             Weitere Kontaktmöglichkeit: <a href="https://t.me/devops24x7" rel="noopener">Telegram</a>
         </p>
 
         <h2>Umsatzsteuer-ID</h2>
-        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: <span data-legal="vat"></span></p>
+        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {{LEGAL_VAT}}</p>
 
         <h2>Berufsbezeichnung</h2>
         <p>
@@ -66,6 +62,5 @@
         <a href="/datenschutz.html">Datenschutz</a>
     </footer>
 
-    <script src="/assets/legal.js"></script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fills the legal placeholders from repository secrets. The script
+      # prints only a file count; the built files are never echoed.
+      - name: Build
+        env:
+          LEGAL_STREET: ${{ secrets.LEGAL_STREET }}
+          LEGAL_CITY: ${{ secrets.LEGAL_CITY }}
+          LEGAL_EMAIL: ${{ secrets.LEGAL_EMAIL }}
+          LEGAL_VAT: ${{ secrets.LEGAL_VAT }}
+        run: python3 scripts/build.py
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

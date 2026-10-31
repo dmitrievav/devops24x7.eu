@@ -4,6 +4,12 @@ docs/
 .claude/settings.local.json
 .DS_Store
 
-# Plaintext source for encrypted legal data (assets/legal.json)
+# Local copy of the legal data for previews (CI uses repository secrets)
 private/
 .playwright-mcp/
+
+# Build output (scripts/build.py)
+_site/
+
+# Designer's files (contain personal data)
+inbox/
