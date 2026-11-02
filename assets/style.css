@@ -127,8 +127,8 @@ svg {
 }
 
 .brand svg {
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 52px;
     color: var(--brand);
 }
 
@@ -619,6 +619,23 @@ svg {
     flex-wrap: wrap;
 }
 
+.footer-brand {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.footer-brand svg {
+    width: 25px;
+    height: 26px;
+    color: var(--brand);
+}
+
+.footer-brand strong {
+    color: var(--ink);
+    font-weight: 700;
+}
+
 @media (max-width: 960px) {
     .site-header {
         flex-wrap: wrap;
@@ -688,8 +705,8 @@ svg {
     }
 
     .brand svg {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 42px;
     }
 
     .navigation {
